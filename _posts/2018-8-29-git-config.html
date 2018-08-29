@@ -1,0 +1,15 @@
+---
+layout: default
+title:git Config
+---
+<h2>{{ page.title }}</h2>
+<p>1.$git config --global user.name "Your Name"</p>
+<p>2.$git config --global user.email "email@example.com"</p>
+<p>3.$git init</p>
+<p>4.配置SSH:$ ssh-keygen -t rsa -C "email@example.com"</p>
+<p>  在github网站上添加ssh-key后(id_rsa.pub),测试是否成功: $ ssh -T git@github.com</p>
+<p>5.$git clone https://github.com/jvschen/my_blog.git</p>
+<p>6.$cd my_blogs</p>
+<p>7.$git remote add origin https://github.com/jvschen/my_blog.git<p>
+<p>8.$git pull origin gh-pages<p>
+<p>{{ page.date | date_to_string }}</p>
