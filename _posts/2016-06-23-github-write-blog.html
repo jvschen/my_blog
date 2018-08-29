@@ -1,0 +1,55 @@
+---
+layout: default
+title: 利用github写个人blog
+---
+<h2>{{ page.title }}</h2>
+<p>参靠教程：http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html</p>
+个人随记:<p>
+1.创建项目<p>
+ $ mkdir my_blog <p>
+ $ cd my_blog    <p>
+ $ git init      <p>
+ 创建一个没有父节点的分支gh-pages <p>
+ $ git checkout --orphan gh-pages <p>
+<p>
+  2.创建设置文件 <p>
+  在项目根目录下创建文件_config.yml <p>
+  $ echo "baseurl:/my_blog" > _config.yml <p>
+<p>
+  3.创建模板文件 <p>
+  在项目根目录下，创建一个_layouts目录 <p>
+  $ mkdir _layouts <p>
+  在_layouts 下新建 default.html 格式参靠教程 <p>
+<p>
+  4.创建文章 <p>
+  在项目根目录下 <p>
+  $ mkdir _posts<p>
+  文章在此目录下新建 ，文件名格式为： 年－月－日－文章标题.html 注意编码格式为utf8.<p>
+<p>
+  5.创建首页<p>
+  在项目根目录下新建 index.html 格式参考教程。<p>
+<p>
+  6.发布内容。<p>
+  $ git add .<p>
+  $ git commit -m "my_blog first post"<p>
+  前往github 创建一个名为 my_blog 的库. 把本地内容推送上去。<p>
+<p>
+  $ git remote add origin http://github.com/jvschen/my_blog.git<p>
+  $ git push origin gh-pages<p>
+  过一会，访问 http://jvschen.github.io/my_blog/就可以看到新建的blog文.<p>
+<p>
+  7.遇到的问题<p>
+  fatal: unable to access 'https://github.com/jvschen/my_blog.git/': Couldn't resolve host 'githup.com'<p>
+  ping https://github.com 不通<p>
+<p>
+  修改协议 .git/config<p>
+  [remote "origin"]<p>
+  url = ssh://git@github.com/jvschen/my_blog.git<p>
+  fetch = +refs/heads/*:refs/remotes/origin/*<p>
+<p>
+  ssh 不通,修改hosts文件<p>
+  C:\Windows\System32\drivers\etc<p>
+  host <p>
+  xxxxxx github.com<p>
+  <p>
+<p>{{ page.date | date_to_string }}</p>
